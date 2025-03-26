@@ -1,6 +1,6 @@
 package com.backend.backend.Models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -44,7 +44,8 @@ public class Patient {
     private String motDePasse;
     @Column(unique = true)
     private int tel;
-    private Date dateNaissance;
+
+    private LocalDate dateNaissance;
     private String adresse;
     private String sexe;
 
@@ -84,12 +85,29 @@ public class Patient {
         this.adresse = adresse;
     }
 
-    public Date getDateNaissance() {
+    public LocalDate getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(LocalDate dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
+    public Patient() {
+    }
+
+    public Patient(String nom, String prenom, String email, String motDePasse, int tel, LocalDate dateNaissance, String adresse, String sexe) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.motDePasse = motDePasse;
+        this.tel = tel;
+        this.dateNaissance = dateNaissance;
+        this.adresse = adresse;
+        this.sexe = sexe;
+    }
 }

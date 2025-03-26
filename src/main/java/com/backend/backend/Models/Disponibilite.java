@@ -19,9 +19,9 @@ public class Disponibilite {
     @JoinColumn(name = "medecin_id", nullable = false)
     private Medecin medecin;
 
-    private String jour;       // Exemple : "Lundi", "Mardi"
-    private Date heureDebut; // Exemple : "08:00"
-    private Date heureFin;   // Exemple : "12:00"
+    private String jour;
+    private Date heureDebut;
+    private Date heureFin;
 
     public Long getId() {
         return id;
@@ -62,5 +62,9 @@ public class Disponibilite {
     public void setHeureFin(Date heureFin) {
         this.heureFin = heureFin;
     }
+
+    public Disponibilite() {
+    }
+    
 
 }

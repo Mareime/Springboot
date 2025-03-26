@@ -1,11 +1,15 @@
 package com.backend.backend.Models;
-// import jakarta.persistence.Enumerated;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+@Entity
 public class RendezVous {
 
     @Id
@@ -20,15 +24,7 @@ public class RendezVous {
     @JoinColumn(name = "medecin_id", nullable = false)
     private Medecin medecin;
 
-    public Medecin getMedecin() {
-        return medecin;
-    }
-
-    public void setMedecin(Medecin medecin) {
-        this.medecin = medecin;
-    }
-
-    private String dateRdv;
+    private LocalDateTime dateRdv;
     private String statut;
     private String motif;
 
@@ -48,20 +44,20 @@ public class RendezVous {
         this.patient = patient;
     }
 
-    public String getDateRdv() {
+    public Medecin getMedecin() {
+        return medecin;
+    }
+
+    public void setMedecin(Medecin medecin) {
+        this.medecin = medecin;
+    }
+
+    public LocalDateTime getDateRdv() {
         return dateRdv;
     }
 
-    public void setDateRdv(String dateRdv) {
+    public void setDateRdv(LocalDateTime dateRdv) {
         this.dateRdv = dateRdv;
-    }
-
-    public String getMotif() {
-        return motif;
-    }
-
-    public void setMotif(String motif) {
-        this.motif = motif;
     }
 
     public String getStatut() {
@@ -72,4 +68,11 @@ public class RendezVous {
         this.statut = statut;
     }
 
+    public String getMotif() {
+        return motif;
+    }
+
+    public void setMotif(String motif) {
+        this.motif = motif;
+    }
 }
