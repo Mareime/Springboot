@@ -1,9 +1,11 @@
 package com.backend.backend.Models;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+@Entity
 public class Admin {
 
     @Id
@@ -17,6 +19,7 @@ public class Admin {
     public void setId(Long id) {
         this.id = id;
     }
+
     private String nom;
 
     public String getNom() {
@@ -26,6 +29,7 @@ public class Admin {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
     private String prenom;
     private String email;
 
@@ -36,6 +40,7 @@ public class Admin {
     public void setEmail(String email) {
         this.email = email;
     }
+
     private String motDePasse;
 
     public String getMotDePasse() {
@@ -45,6 +50,7 @@ public class Admin {
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
     }
+
     private String telephone;
 
     public String getTelephone() {
@@ -61,6 +67,12 @@ public class Admin {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+
+    private final String role = "MEDECIN";
+
+    public String getRole() {
+        return role;
     }
 
 }

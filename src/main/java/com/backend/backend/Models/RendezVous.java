@@ -1,4 +1,8 @@
 package com.backend.backend.Models;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 // import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -6,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+@Entity
 public class RendezVous {
 
     @Id
@@ -29,7 +34,8 @@ public class RendezVous {
     }
 
     private String dateRdv;
-    private String statut;
+    @Enumerated(EnumType.STRING)
+    private RendezVousStatus statut;
     private String motif;
 
     public Long getId() {
@@ -64,11 +70,11 @@ public class RendezVous {
         this.motif = motif;
     }
 
-    public String getStatut() {
+    public RendezVousStatus getStatut() {
         return statut;
     }
 
-    public void setStatut(String statut) {
+    public void setStatut(RendezVousStatus statut) {
         this.statut = statut;
     }
 

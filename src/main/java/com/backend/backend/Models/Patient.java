@@ -1,12 +1,15 @@
 package com.backend.backend.Models;
 
 import java.util.Date;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Patient {
@@ -22,6 +25,7 @@ public class Patient {
     public void setId(Long id) {
         this.id = id;
     }
+
     private String nom;
 
     public String getNom() {
@@ -31,6 +35,7 @@ public class Patient {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
     private String prenom;
     private String email;
 
@@ -41,6 +46,7 @@ public class Patient {
     public void setEmail(String email) {
         this.email = email;
     }
+
     private String motDePasse;
     @Column(unique = true)
     private int tel;
@@ -50,6 +56,10 @@ public class Patient {
 
     public String getSexe() {
         return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
     }
 
     public String getPrenom() {
@@ -91,5 +101,14 @@ public class Patient {
     public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
+
+    private final String  role ="PATIENT";
+
+    public String getRole() {
+        return role;
+    }
+   @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    private List<RendezVous> rendezVous;
+
 
 }
