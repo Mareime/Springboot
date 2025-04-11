@@ -51,7 +51,7 @@ public class RendezVousController {
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-    }
+    }   
 
     @DeleteMapping("/rendezvous/{id}")
     public void deleteRendezVous(@PathVariable Long id) {
