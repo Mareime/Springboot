@@ -18,7 +18,7 @@ import com.backend.backend.Models.Medecin;
 import com.backend.backend.Services.MedecinService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RequestMapping("/api")
 public class MedecinController {
 

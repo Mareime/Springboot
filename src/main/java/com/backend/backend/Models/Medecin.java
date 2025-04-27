@@ -14,7 +14,7 @@ public class Medecin {
     private Long id;
 
     private String nom;
-
+    
     public String getNom() {
         return nom;
     }
@@ -83,6 +83,16 @@ public class Medecin {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    private String motDePasse;
+    
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
     }
 
     public Medecin() {

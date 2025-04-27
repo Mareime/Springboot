@@ -20,7 +20,7 @@ import com.backend.backend.Models.RendezVous;
 import com.backend.backend.Services.RendezVousService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RequestMapping("/api")
 public class RendezVousController {
 

@@ -85,6 +85,6 @@ public class Admin {
                 ", email='" + email + '\'' +
                 ", motDePasse='" + motDePasse + '\'' +
                 ", telephone='" + telephone + '\'' +
-                '}';
+                '}';    
     }
 }

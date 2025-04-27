@@ -27,7 +27,7 @@ public class PatientService {
             updatedPatient.setPrenom(patient.getPrenom());
             updatedPatient.setEmail(patient.getEmail());
             updatedPatient.setMotDePasse(patient.getMotDePasse());
-            updatedPatient.setTel(patient.getTel());
+            updatedPatient.settelephone(patient.gettelephone());
             updatedPatient.setDateNaissance(patient.getDateNaissance());
             updatedPatient.setAdresse(patient.getAdresse());
             updatedPatient.setSexe(patient.getSexe());

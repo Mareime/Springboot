@@ -1,5 +1,6 @@
 package com.backend.backend.Controllers;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,7 +19,7 @@ import com.backend.backend.Models.Disponibilite;
 import com.backend.backend.Services.DisponibiliteService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RequestMapping("/api")
 public class DisponibiliteController {
 
@@ -48,6 +49,7 @@ public class DisponibiliteController {
     @PostMapping("/disponibilites/add")
     public void addDisponibilite(@RequestBody Disponibilite disponibilite) {
         disponibiliteService.createDisponibilite(disponibilite);
+        System.out.println("Received: " + disponibilite);
     }
 
     @PutMapping("/disponibilites/update/{id}")

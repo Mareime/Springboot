@@ -1,5 +1,6 @@
 package com.backend.backend.Models;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
@@ -43,9 +44,9 @@ public class Patient {
     }
     private String motDePasse;
     @Column(unique = true)
-    private int tel;
+    private String telephone;
 
-    private LocalDate dateNaissance;
+    private Date dateNaissance;
     private String adresse;
     private String sexe;
 
@@ -69,12 +70,12 @@ public class Patient {
         this.motDePasse = motDePasse;
     }
 
-    public int getTel() {
-        return tel;
+    public String gettelephone() {
+        return telephone;
     }
 
-    public void setTel(int tel) {
-        this.tel = tel;
+    public void settelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     public String getAdresse() {
@@ -85,11 +86,11 @@ public class Patient {
         this.adresse = adresse;
     }
 
-    public LocalDate getDateNaissance() {
+    public Date getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(LocalDate dateNaissance) {
+    public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
@@ -100,12 +101,12 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(String nom, String prenom, String email, String motDePasse, int tel, LocalDate dateNaissance, String adresse, String sexe) {
+    public Patient(String nom, String prenom, String email, String motDePasse, String telephone, Date dateNaissance, String adresse, String sexe) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.motDePasse = motDePasse;
-        this.tel = tel;
+        this.telephone = telephone;
         this.dateNaissance = dateNaissance;
         this.adresse = adresse;
         this.sexe = sexe;
