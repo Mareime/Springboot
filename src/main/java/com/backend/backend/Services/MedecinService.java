@@ -26,7 +26,6 @@ public class MedecinService {
     public Medecin addMedecin(Medecin medecin) {
         return medecinRepository.save(medecin);
     }
-    
 
     public void deleteMedecin(Long id) {
         medecinRepository.deleteById(id);

@@ -1,6 +1,7 @@
 package com.backend.backend.Controllers;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,14 +43,14 @@ public class DisponibiliteController {
     }
 
     @GetMapping("/disponibilites/jour/{jour}")
-    public List<Disponibilite> getDisponibilitesByJour(@PathVariable String jour) {
+    public List<Disponibilite> getDisponibilitesByJour(@PathVariable LocalDate jour) {
         return disponibiliteService.getDisponibilitesByJour(jour);
     }
 
     @PostMapping("/disponibilites/add")
-    public void addDisponibilite(@RequestBody Disponibilite disponibilite) {
+    public Disponibilite addDisponibilite(@RequestBody Disponibilite disponibilite) {
         disponibiliteService.createDisponibilite(disponibilite);
-        System.out.println("Received: " + disponibilite);
+        return disponibilite;
     }
 
     @PutMapping("/disponibilites/update/{id}")

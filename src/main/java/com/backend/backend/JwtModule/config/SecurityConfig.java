@@ -1,6 +1,4 @@
-
 // package com.backend.backend.JwtModule.config;
-
 // import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.context.annotation.Bean;
 // import org.springframework.context.annotation.Configuration;
@@ -13,14 +11,11 @@
 // import org.springframework.security.crypto.password.PasswordEncoder;
 // import org.springframework.security.web.SecurityFilterChain;
 // import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 // import com.backend.backend.JwtModule.services.MyUserDetailsService;
 // import com.backend.backend.JwtModule.util.JwtFilter;
-
 // @Configuration
 // @EnableWebSecurity
 // public class SecurityConfig {
-
 //     @Autowired
 //     private JwtFilter jwtFilter;
 //     @Autowired
@@ -35,24 +30,20 @@
 //                         .requestMatchers("/api/auth/**").permitAll() // Then more general patterns
 //                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
 //                         .anyRequest().permitAll())
-
 //                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 //                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
 //                 .userDetailsService(userDetailsService)
 //                 .build();
 //     }
-
 //     @Bean
 //     public AuthenticationManager authManager(AuthenticationConfiguration config) throws Exception {
 //         return config.getAuthenticationManager();
 //     }
-
 //     @Bean
 //     public PasswordEncoder passwordEncoder() {
 //         return new BCryptPasswordEncoder();
 //     }
 // }
-
 package com.backend.backend.JwtModule.config;
 
 import java.util.Arrays;
@@ -77,6 +68,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class SecurityConfig {
+
     @Autowired
     private JwtFilter jwtFilter;
     @Autowired

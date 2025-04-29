@@ -45,4 +45,9 @@ public class RendezVousService {
             return null; // or throw an exception
         }
     }
+
+    // Fetch RendezVous by medecinId
+    public List<RendezVous> getRendezVousByMedecin(Long medecinId) {
+        return rendezVousRepository.findByMedecinId(medecinId);
+    }
 }

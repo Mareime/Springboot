@@ -52,4 +52,9 @@ public class PatientController {
     public void deletePatient(@PathVariable Long id) {
         patientService.deletePatient(id);
     }
+
+    @GetMapping("/medecin/{medecinId}/patients")
+    public List<Patient> getPatientsByMedecin(@PathVariable Long medecinId) {
+        return patientService.getPatientsByMedecin(medecinId);
+    }
 }
